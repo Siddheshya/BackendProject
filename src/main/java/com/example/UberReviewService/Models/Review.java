@@ -17,7 +17,8 @@ import java.util.Date;
 @Builder
 @NoArgsConstructor // associated with builder class
 @AllArgsConstructor // associated with builder class
-@Table(name = "bookingReview") // this annotation deals with database layer
+@Table(name = "booking_review") // this annotation deals with database layer
+@Inheritance(strategy =  InheritanceType.JOINED)
 public class Review extends  BaseModel{
 
     @Column(nullable = false)

@@ -11,7 +11,8 @@ import java.util.Date;
 @MappedSuperclass
 @Getter
 @Setter
-@EntityListeners(AuditingEntityListener.class) // this annotation is providing a class to triggers when the below entity gets updated or created , it monitors the lifecyle of the entity
+@EntityListeners(AuditingEntityListener.class)// this annotation is providing a class to triggers when the below entity gets updated or created , it monitors the lifecyle of the entity
+
 public abstract class BaseModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
