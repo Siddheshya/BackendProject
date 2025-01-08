@@ -37,4 +37,9 @@ public class ReviewServiceImpl implements ReviewService{
 
         return true;
     }
+
+    @Override
+    public Review publishReview(Review review) {
+        return reviewRepository.save(review);
+    }
 }

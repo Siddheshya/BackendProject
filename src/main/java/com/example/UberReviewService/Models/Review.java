@@ -1,5 +1,6 @@
 package com.example.UberReviewService.Models;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -13,6 +14,7 @@ import lombok.*;
 @AllArgsConstructor // associated with builder class
 @Table(name = "booking_review") // this annotation deals with database layer
 @Inheritance(strategy =  InheritanceType.JOINED)
+
 public class Review extends  BaseModel{
 
     @Column(nullable = false)
@@ -21,5 +23,8 @@ public class Review extends  BaseModel{
     @Column
     double rating;
 
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(nullable = false)
+    private Booking booking;
 
 }

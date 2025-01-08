@@ -1,5 +1,6 @@
 package com.example.UberReviewService.Models;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -13,8 +14,7 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Booking extends BaseModel{
-    @OneToOne(cascade = {CascadeType.PERSIST, CascadeType.REMOVE} , fetch =  FetchType.LAZY) //for oneToOne relationship the default fetch is always eager.
-    private Review review;
+
 
     @Enumerated(value = EnumType.STRING)
     private BookingStatus bookingStatus;
